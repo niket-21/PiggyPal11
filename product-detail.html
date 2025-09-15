@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail - ShopEase</title>
+    <title>Product Detail - TechTrove</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/product-detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -15,7 +15,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <h1>ShopEase</h1>
+                    <h1>TechTrove</h1>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -25,7 +25,7 @@
                 </ul>
                 <div class="nav-icons">
                     <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    <a href="#" class="wishlist-icon"><i class="fas fa-heart"></i><span class="wishlist-count">0</span></a>
                     <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
                     <div class="menu-toggle">
                         <i class="fas fa-bars"></i>
@@ -53,7 +53,7 @@
                 <!-- Product Images -->
                 <div class="product-images">
                     <div class="main-image">
-                        <img id="main-product-image" src="images/product1.jpg" alt="Product Image">
+                        <img id="main-product-image" src="https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SL1500_.jpg" alt="Product Image">
                         <div class="image-overlay">
                             <div class="zoom-icon">
                                 <i class="fas fa-search-plus"></i>
@@ -61,24 +61,24 @@
                         </div>
                     </div>
                     <div class="thumbnail-images">
-                        <div class="thumbnail active" data-img="images/product1.jpg">
-                            <img src="images/product1.jpg" alt="Thumbnail 1">
+                        <div class="thumbnail active" data-img="https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SL1500_.jpg">
+                            <img src="https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SL1500_.jpg" alt="Thumbnail 1">
                         </div>
-                        <div class="thumbnail" data-img="images/product1-2.jpg">
-                            <img src="images/product1-2.jpg" alt="Thumbnail 2">
+                        <div class="thumbnail" data-img="https://m.media-amazon.com/images/I/71Sq9Qd+pGL._AC_SL1500_.jpg">
+                            <img src="https://m.media-amazon.com/images/I/71Sq9Qd+pGL._AC_SL1500_.jpg" alt="Thumbnail 2">
                         </div>
-                        <div class="thumbnail" data-img="images/product1-3.jpg">
-                            <img src="images/product1-3.jpg" alt="Thumbnail 3">
+                        <div class="thumbnail" data-img="https://m.media-amazon.com/images/I/71+rP53jzFL._AC_SL1500_.jpg">
+                            <img src="https://m.media-amazon.com/images/I/71+rP53jzFL._AC_SL1500_.jpg" alt="Thumbnail 3">
                         </div>
-                        <div class="thumbnail" data-img="images/product1-4.jpg">
-                            <img src="images/product1-4.jpg" alt="Thumbnail 4">
+                        <div class="thumbnail" data-img="https://m.media-amazon.com/images/I/71nC5aZKcbL._AC_SL1500_.jpg">
+                            <img src="https://m.media-amazon.com/images/I/71nC5aZKcbL._AC_SL1500_.jpg" alt="Thumbnail 4">
                         </div>
                     </div>
                 </div>
 
                 <!-- Product Info -->
                 <div class="product-info">
-                    <h1 id="product-name">Premium Wireless Earbuds</h1>
+                    <h1 id="product-name">Sony WF-1000XM4 Wireless Earbuds</h1>
                     <div class="product-meta">
                         <div class="product-rating">
                             <i class="fas fa-star"></i>
@@ -99,13 +99,13 @@
                     </div>
 
                     <div class="product-price">
-                        <span class="current-price" id="product-price">₹1,999</span>
-                        <span class="original-price" id="product-original-price">₹3,499</span>
+                        <span class="current-price" id="product-price">$199.99</span>
+                        <span class="original-price" id="product-original-price">$349.99</span>
                         <span class="discount-badge">43% Off</span>
                     </div>
 
                     <div class="product-description">
-                        <p id="product-description">Experience crystal-clear sound with our Premium Wireless Earbuds. Featuring advanced noise cancellation technology, these earbuds deliver an immersive audio experience. With a comfortable ergonomic design and long battery life, they're perfect for all-day use. The touch controls make it easy to manage your music and calls without reaching for your phone.</p>
+                        <p id="product-description">Experience industry-leading noise cancellation with the Sony WF-1000XM4 Wireless Earbuds. These premium earbuds feature exceptional sound quality with the new Integrated Processor V1, crystal-clear call quality with beam-forming microphones, and up to 8 hours of battery life with noise cancellation (24 hours with charging case). The ergonomic design ensures a secure, comfortable fit for all-day listening.</p>
                     </div>
 
                     <div class="product-features">
@@ -136,11 +136,11 @@
                             <input type="number" value="1" min="1" max="10" id="quantity">
                             <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
                         </div>
-                        <button class="btn primary-btn add-to-cart-btn" data-id="1">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <button class="btn primary-btn add-to-wishlist-btn" data-id="1">
+                            <i class="fas fa-heart"></i> Add to Wishlist
                         </button>
-                        <button class="btn outline-btn wishlist-btn">
-                            <i class="far fa-heart"></i>
+                        <button class="btn outline-btn quick-view-btn">
+                            <i class="fas fa-eye"></i>
                         </button>
                     </div>
 
@@ -169,7 +169,7 @@
                             <i class="fas fa-truck"></i>
                             <div>
                                 <h4>Free Shipping</h4>
-                                <p>On orders over ₹999</p>
+                                <p>On orders over $99</p>
                             </div>
                         </div>
                         <div class="delivery-item">

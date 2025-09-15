@@ -2,7 +2,7 @@
 
 /* Breadcrumb Styles */
 .breadcrumb {
-    background-color: #f8f9fa;
+    background-color: #e6f2ff;
     padding: 15px 0;
     margin-bottom: 30px;
 }
@@ -26,7 +26,7 @@
 }
 
 .breadcrumb li.active {
-    color: #ff6b6b;
+    color: #1a56db;
     font-weight: 500;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .breadcrumb a:hover {
-    color: #ff6b6b;
+    color: #1a56db;
 }
 
 /* Products Section */
@@ -60,6 +60,7 @@
     position: sticky;
     top: 20px;
     height: fit-content;
+    border-left: 3px solid #1a56db;
 }
 
 .filter-section {
@@ -124,8 +125,8 @@
 
 .checkbox-container input:checked ~ .checkmark,
 .radio-container input:checked ~ .radio-mark {
-    background-color: #ff6b6b;
-    border-color: #ff6b6b;
+    background-color: #1a56db;
+    border-color: #1a56db;
 }
 
 .checkmark:after,
@@ -192,7 +193,7 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #ff6b6b;
+    background: #1a56db;
     cursor: pointer;
     margin-top: -7px;
     pointer-events: auto;
@@ -211,7 +212,7 @@
 .slider-range {
     position: absolute;
     height: 5px;
-    background: #ff6b6b;
+    background: #1a56db;
     border-radius: 3px;
     z-index: 1;
 }

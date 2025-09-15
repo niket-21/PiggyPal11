@@ -94,7 +94,7 @@ function initPriceRangeSlider() {
             applyBtn.addEventListener('click', function() {
                 // Here you would typically filter products based on price range
                 // For now, we'll just show a notification
-                showNotification(`Filtering products from ₹${inputMin.value} to ₹${inputMax.value}`);
+                showNotification(`Filtering products from $${inputMin.value} to $${inputMax.value}`);
             });
         }
     }
@@ -184,21 +184,21 @@ function initFilters() {
     }
 }
 
-// Product Actions (Add to Cart, Wishlist, Quick View)
+// Product Actions (Add to Wishlist, Quick View)
 function initProductActions() {
-    // Add to cart buttons
-    const addToCartBtns = document.querySelectorAll('.add-to-cart, .list-add-to-cart');
+    // Add to wishlist buttons
+    const addToWishlistBtns = document.querySelectorAll('.add-to-wishlist, .list-add-to-wishlist');
     
-    addToCartBtns.forEach(btn => {
+    addToWishlistBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             const productId = this.getAttribute('data-id');
-            addToCart(productId);
+            addToWishlist(productId);
         });
     });
     
     // Product action buttons (heart, eye)
-    const actionBtns = document.querySelectorAll('.action-btn:not(.add-to-cart)');
+    const actionBtns = document.querySelectorAll('.action-btn:not(.add-to-wishlist)');
     
     actionBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
@@ -219,7 +219,7 @@ function initProductActions() {
             } else if (icon.classList.contains('fa-eye')) {
                 // Quick view
                 const productCard = this.closest('.product-card');
-                const productId = productCard.querySelector('.add-to-cart').getAttribute('data-id');
+                const productId = productCard.querySelector('.add-to-wishlist').getAttribute('data-id');
                 quickView(productId);
             }
         });
@@ -239,12 +239,12 @@ function initProductActions() {
     });
 }
 
-// Add to Cart Function
-function addToCart(productId) {
-    // Here you would typically add the product to the cart
-    // For now, we'll just update the cart count and show a notification
-    updateCartCount(1);
-    showNotification('Product added to cart');
+// Add to Wishlist Function
+function addToWishlist(productId) {
+    // Here you would typically add the product to the wishlist
+    // For now, we'll just update the wishlist count and show a notification
+    updateWishlistCount(1);
+    showNotification('Product added to wishlist');
 }
 
 // Quick View Function
@@ -254,18 +254,18 @@ function quickView(productId) {
     showNotification(`Quick view for product ${productId}`);
 }
 
-// Update Cart Count
-function updateCartCount(increment) {
-    const cartCount = document.querySelector('.cart-count');
-    if (cartCount) {
-        let count = parseInt(cartCount.textContent) || 0;
+// Update Wishlist Count
+function updateWishlistCount(increment) {
+    const wishlistCount = document.querySelector('.wishlist-count');
+    if (wishlistCount) {
+        let count = parseInt(wishlistCount.textContent) || 0;
         count += increment;
-        cartCount.textContent = count;
+        wishlistCount.textContent = count;
         
         // Add animation class
-        cartCount.classList.add('pulse');
+        wishlistCount.classList.add('pulse');
         setTimeout(() => {
-            cartCount.classList.remove('pulse');
+            wishlistCount.classList.remove('pulse');
         }, 300);
     }
 }
