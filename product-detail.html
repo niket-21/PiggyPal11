@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - ShopEase</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>ShopEase</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li class="active" id="product-breadcrumb">Product Detail</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-grid">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="main-product-image" src="images/product1.jpg" alt="Product Image">
+                        <div class="image-overlay">
+                            <div class="zoom-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" data-img="images/product1.jpg">
+                            <img src="images/product1.jpg" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" data-img="images/product1-2.jpg">
+                            <img src="images/product1-2.jpg" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" data-img="images/product1-3.jpg">
+                            <img src="images/product1-3.jpg" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail" data-img="images/product1-4.jpg">
+                            <img src="images/product1-4.jpg" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 id="product-name">Premium Wireless Earbuds</h1>
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-sku">
+                            <span>SKU: </span>
+                            <span id="product-sku">PROD001</span>
+                        </div>
+                        <div class="product-availability in-stock">
+                            <i class="fas fa-check-circle"></i>
+                            <span>In Stock</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price" id="product-price">₹1,999</span>
+                        <span class="original-price" id="product-original-price">₹3,499</span>
+                        <span class="discount-badge">43% Off</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p id="product-description">Experience crystal-clear sound with our Premium Wireless Earbuds. Featuring advanced noise cancellation technology, these earbuds deliver an immersive audio experience. With a comfortable ergonomic design and long battery life, they're perfect for all-day use. The touch controls make it easy to manage your music and calls without reaching for your phone.</p>
+                    </div>
+
+                    <div class="product-features">
+                        <h3>Key Features</h3>
+                        <ul id="product-features">
+                            <li><i class="fas fa-check"></i> Active Noise Cancellation</li>
+                            <li><i class="fas fa-check"></i> Bluetooth 5.2 Connectivity</li>
+                            <li><i class="fas fa-check"></i> 8 Hours Battery Life (30 Hours with Case)</li>
+                            <li><i class="fas fa-check"></i> IPX7 Water Resistance</li>
+                            <li><i class="fas fa-check"></i> Touch Controls</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-variants">
+                        <div class="variant-group">
+                            <h3>Color</h3>
+                            <div class="color-options">
+                                <div class="color-option active" data-color="black" style="background-color: #000;"></div>
+                                <div class="color-option" data-color="white" style="background-color: #fff; border: 1px solid #ddd;"></div>
+                                <div class="color-option" data-color="blue" style="background-color: #4a6bff;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" max="10" id="quantity">
+                            <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <button class="btn primary-btn add-to-cart-btn" data-id="1">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn outline-btn wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="product-meta-info">
+                        <div class="meta-item">
+                            <span>Categories:</span>
+                            <a href="#">Electronics</a>, <a href="#">Audio</a>
+                        </div>
+                        <div class="meta-item">
+                            <span>Tags:</span>
+                            <a href="#">wireless</a>, <a href="#">earbuds</a>, <a href="#">bluetooth</a>
+                        </div>
+                        <div class="meta-item">
+                            <span>Share:</span>
+                            <div class="social-share">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-delivery-info">
+                        <div class="delivery-item">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Free Shipping</h4>
+                                <p>On orders over ₹999</p>
+                            </div>
+                        </div>
+                        <div class="delivery-item">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <h4>Easy Returns</h4>
+                                <p>30-day return policy</p>
+                            </div>
+                        </div>
+                        <div class="delivery-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure Checkout</h4>
+                                <p>100% Protected Payments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (12)</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="description">
+                        <h3>Product Description</h3>
+                        <p>Introducing our Premium Wireless Earbuds, the perfect companion for music lovers and professionals alike. These earbuds combine cutting-edge technology with sleek design to deliver an exceptional audio experience.</p>
+                        
+                        <p>The active noise cancellation technology blocks out ambient noise, allowing you to focus on your music or calls without distractions. With Bluetooth 5.2, you get a stable connection up to 10 meters away from your device.</p>
+                        
+                        <p>The ergonomic design ensures a comfortable fit for extended wear, while the touch controls make it easy to manage your music, calls, and voice assistant. The earbuds are IPX7 water-resistant, making them perfect for workouts and outdoor activities.</p>
+                        
+                        <p>With up to 8 hours of playback time on a single charge and an additional 22 hours with the charging case, you can enjoy your music all day long. The quick charge feature gives you 2 hours of playback with just 10 minutes of charging.</p>
+                        
+                        <div class="product-video">
+                            <div class="video-container">
+                                <img src="images/product-video-thumbnail.jpg" alt="Product Video Thumbnail" class="video-placeholder">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="specifications">
+                        <h3>Technical Specifications</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <th>Model</th>
+                                <td>SE-TWS-2023</td>
+                            </tr>
+                            <tr>
+                                <th>Bluetooth Version</th>
+                                <td>5.2</td>
+                            </tr>
+                            <tr>
+                                <th>Battery Life</th>
+                                <td>8 hours (earbuds), 30 hours (with case)</td>
+                            </tr>
+                            <tr>
+                                <th>Charging Time</th>
+                                <td>1.5 hours (earbuds), 2 hours (case)</td>
+                            </tr>
+                            <tr>
+                                <th>Driver Size</th>
+                                <td>10mm Dynamic Drivers</td>
+                            </tr>
+                            <tr>
+                                <th>Frequency Response</th>
+                                <td>20Hz - 20kHz</td>
+                            </tr>
+                            <tr>
+                                <th>Impedance</th>
+                                <td>32Ω</td>
+                            </tr>
+                            <tr>
+                                <th>Water Resistance</th>
+                                <td>IPX7</td>
+                            </tr>
+                            <tr>
+                                <th>Microphone</th>
+                                <td>Dual Microphones with ENC</td>
+                            </tr>
+                            <tr>
+                                <th>Controls</th>
+                                <td>Touch Controls</td>
+                            </tr>
+                            <tr>
+                                <th>Weight</th>
+                                <td>5g (each earbud), 45g (charging case)</td>
+                            </tr>
+                            <tr>
+                                <th>In the Box</th>
+                                <td>Earbuds, Charging Case, USB-C Cable, 3 Pairs of Ear Tips (S/M/L), User Manual</td>
+                            </tr>
+                            <tr>
+                                <th>Warranty</th>
+                                <td>1 Year</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-panel" id="reviews">
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <div class="rating-number">4.5</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="rating-count">Based on 12 reviews</div>
+                            </div>
+                            <div class="rating-breakdown">
+                                <div class="rating-bar">
+                                    <span>5 Star</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 70%;"></div>
+                                    </div>
+                                    <span>8</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 Star</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 20%;"></div>
+                                    </div>
+                                    <span>2</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 Star</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 10%;"></div>
+                                    </div>
+                                    <span>1</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 Star</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 0%;"></div>
+                                    </div>
+                                    <span>0</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 Star</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 8%;"></div>
+                                    </div>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="images/reviewer1.jpg" alt="Reviewer">
+                                        <div>
+                                            <h4>Rahul Sharma</h4>
+                                            <div class="review-date">June 15, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <h4>Amazing sound quality!</h4>
+                                    <p>I've tried many wireless earbuds before, but these are by far the best. The sound quality is exceptional, and the noise cancellation works perfectly. Battery life is impressive too - I can use them all day without recharging. Highly recommended!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="images/reviewer2.jpg" alt="Reviewer">
+                                        <div>
+                                            <h4>Priya Patel</h4>
+                                            <div class="review-date">May 28, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <h4>Great earbuds, minor connectivity issues</h4>
+                                    <p>The sound quality and comfort are excellent. I love the touch controls and the battery life is as advertised. The only issue I've had is occasional connectivity drops when I'm in crowded areas. Otherwise, they're perfect for daily use.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="images/reviewer3.jpg" alt="Reviewer">
+                                        <div>
+                                            <h4>Amit Kumar</h4>
+                                            <div class="review-date">April 10, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <h4>Worth every rupee!</h4>
+                                    <p>These earbuds have exceeded my expectations. The noise cancellation is perfect for my daily commute, and the sound quality is comparable to much more expensive brands. The fit is comfortable even for long listening sessions. Definitely worth the investment!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="load-more">
+                            <button class="btn outline-btn">Load More Reviews</button>
+                        </div>
+                        
+                        <div class="write-review">
+                            <h3>Write a Review</h3>
+                            <form class="review-form">
+                                <div class="form-group">
+                                    <label>Your Rating</label>
+                                    <div class="rating-select">
+                                        <i class="far fa-star" data-rating="1"></i>
+                                        <i class="far fa-star" data-rating="2"></i>
+                                        <i class="far fa-star" data-rating="3"></i>
+                                        <i class="far fa-star" data-rating="4"></i>
+                                        <i class="far fa-star" data-rating="5"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-title">Review Title</label>
+                                    <input type="text" id="review-title" placeholder="Give your review a title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-content">Your Review</label>
+                                    <textarea id="review-content" rows="5" placeholder="Write your review here"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="reviewer-name">Your Name</label>
+                                        <input type="text" id="reviewer-name" placeholder="Enter your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="reviewer-email">Your Email</label>
+                                        <input type="email" id="reviewer-email" placeholder="Enter your email">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn primary-btn">Submit Review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <div class="section-header">
+                    <h2>You May Also Like</h2>
+                    <p>Products related to this item</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product2.jpg" alt="Product 2">
+                            <div class="product-tag sale">Sale</div>
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn add-to-cart" data-id="2"><i class="fas fa-shopping-cart"></i></button>
+                                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product-detail.html?id=2">Smart Fitness Watch</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹2,499</span>
+                                <span class="original-price">₹4,999</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product3.jpg" alt="Product 3">
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn add-to-cart" data-id="3"><i class="fas fa-shopping-cart"></i></button>
+                                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product-detail.html?id=3">Portable Bluetooth Speaker</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.0)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,299</span>
+                                <span class="original-price">₹1,999</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product4.jpg" alt="Product 4">
+                            <div class="product-tag bestseller">Bestseller</div>
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn add-to-cart" data-id="4"><i class="fas fa-shopping-cart"></i></button>
+                                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product-detail.html?id=4">HD Action Camera</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹4,999</span>
+                                <span class="original-price">₹7,999</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product5.jpg" alt="Product 5">
+                            <div class="product-tag">New</div>
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn add-to-cart" data-id="5"><i class="fas fa-shopping-cart"></i></button>
+                                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product-detail.html?id=5">Wireless Charging Pad</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.0)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹999</span>
+                                <span class="original-price">₹1,499</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="recently-viewed">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recently Viewed</h2>
+            </div>
+            <div class="product-slider">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product6.jpg" alt="Product 6">
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-cart" data-id="6"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=6">Smart Home Speaker</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹3,499</span>
+                            <span class="original-price">₹4,999</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product7.jpg" alt="Product 7">
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-cart" data-id="7"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=7">Wireless Mouse</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(3.5)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹799</span>
+                            <span class="original-price">₹1,299</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>ShopEase</h2>
+                    </div>
+                    <p>Your one-stop destination for all your shopping needs. Quality products, competitive prices, and excellent customer service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Mumbai, 400001, India</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> support@shopease.com</li>
+                        <li><i class="fas fa-clock"></i> Monday-Saturday: 9am-8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="images/payment-methods.png" alt="Payment Methods">
+                </div>
+                <p>&copy; 2023 ShopEase. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Zoom Modal -->
+    <div class="zoom-modal">
+        <div class="zoom-modal-content">
+            <span class="zoom-close">&times;</span>
+            <img class="zoom-img" src="" alt="Zoomed Image">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>
