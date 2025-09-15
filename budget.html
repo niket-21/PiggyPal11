@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planning - PiggyPal</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/budget.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/images/piggypal-logo.svg" alt="PiggyPal Logo">
+            <h1>PiggyPal</h1>
+        </div>
+        <nav>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html" class="active">Budget</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="help.html">Help/FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Budget Planning</h2>
+            <p>Create and manage your pocket money budget</p>
+        </section>
+
+        <section class="budget-overview">
+            <div class="budget-summary-card">
+                <div class="budget-header">
+                    <h3>Monthly Budget Overview</h3>
+                    <div class="budget-period">
+                        <button id="prevMonth" class="period-btn"><i class="fas fa-chevron-left"></i></button>
+                        <span id="currentMonth">May 2023</span>
+                        <button id="nextMonth" class="period-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="budget-stats">
+                    <div class="budget-stat">
+                        <div class="stat-label">Total Budget</div>
+                        <div class="stat-value" id="totalBudgetAmount">$0.00</div>
+                    </div>
+                    <div class="budget-stat">
+                        <div class="stat-label">Spent</div>
+                        <div class="stat-value" id="spentAmount">$0.00</div>
+                    </div>
+                    <div class="budget-stat">
+                        <div class="stat-label">Remaining</div>
+                        <div class="stat-value" id="remainingAmount">$0.00</div>
+                    </div>
+                </div>
+                <div class="budget-progress">
+                    <div class="progress-label">
+                        <span>Budget Used</span>
+                        <span id="budgetPercentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="budgetProgressBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="budget-actions">
+                    <button id="setBudgetBtn" class="btn primary">Set Budget</button>
+                    <button id="adjustBudgetBtn" class="btn secondary">Adjust Categories</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="budget-categories">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Budget Categories</h3>
+                    <div class="view-toggle">
+                        <button class="toggle-btn active" data-view="chart"><i class="fas fa-chart-pie"></i></button>
+                        <button class="toggle-btn" data-view="list"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="view-container chart-view active">
+                        <div class="chart-container">
+                            <canvas id="budgetCategoriesChart"></canvas>
+                        </div>
+                        <div class="chart-legend" id="budgetCategoriesLegend">
+                            <!-- Legend will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="view-container list-view">
+                        <div class="category-list" id="budgetCategoriesList">
+                            <!-- Categories will be populated by JavaScript -->
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #FF6384;"></div>
+                                    <div class="category-name">Food & Drinks</div>
+                                </div>
+                                <div class="category-budget">
+                                    <div class="category-amount">$0 / $0</div>
+                                    <div class="category-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #36A2EB;"></div>
+                                    <div class="category-name">Entertainment</div>
+                                </div>
+                                <div class="category-budget">
+                                    <div class="category-amount">$0 / $0</div>
+                                    <div class="category-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #FFCE56;"></div>
+                                    <div class="category-name">Transportation</div>
+                                </div>
+                                <div class="category-budget">
+                                    <div class="category-amount">$0 / $0</div>
+                                    <div class="category-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #4BC0C0;"></div>
+                                    <div class="category-name">Shopping</div>
+                                </div>
+                                <div class="category-budget">
+                                    <div class="category-amount">$0 / $0</div>
+                                    <div class="category-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #9966FF;"></div>
+                                    <div class="category-name">Education</div>
+                                </div>
+                                <div class="category-budget">
+                                    <div class="category-amount">$0 / $0</div>
+                                    <div class="category-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #FF9F40;"></div>
+                                    <div class="category-name">Gifts</div>
+                                </div>
+                                <div class="category-budget">
+                                    <div class="category-amount">$0 / $0</div>
+                                    <div class="category-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #C9CBCF;"></div>
+                                    <div class="category-name">Other</div>
+                                </div>
+                                <div class="category-budget">
+                                    <div class="category-amount">$0 / $0</div>
+                                    <div class="category-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="budget-tools">
+            <h2>Budget Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Budget Calculator</h3>
+                    <p>Calculate how much to allocate to each spending category based on your total pocket money.</p>
+                    <button class="btn primary" id="openBudgetCalculatorBtn">Open Calculator</button>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Spending Analyzer</h3>
+                    <p>Compare your actual spending with your budget to identify areas where you can save more.</p>
+                    <button class="btn primary" id="openSpendingAnalyzerBtn">Analyze Spending</button>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Budget History</h3>
+                    <p>View your budget history to track how your spending habits have changed over time.</p>
+                    <button class="btn primary" id="openBudgetHistoryBtn">View History</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="budget-tips">
+            <div class="tips-container">
+                <div class="tips-header">
+                    <h3>Budgeting Tips</h3>
+                    <button id="nextTipBtn"><i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="tips-carousel" id="tipsCarousel">
+                    <div class="tip-slide active">
+                        <div class="tip-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="tip-content">
+                            <h4>Balance is Key</h4>
+                            <p>Aim for a balanced budget that covers your needs while allowing some room for wants and savings. The 50/30/20 rule is a good starting point.</p>
+                        </div>
+                    </div>
+                    <div class="tip-slide">
+                        <div class="tip-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="tip-content">
+                            <h4>Track Everything</h4>
+                            <p>Record all your expenses, even small ones. Those little purchases add up quickly and can derail your budget if not accounted for.</p>
+                        </div>
+                    </div>
+                    <div class="tip-slide">
+                        <div class="tip-icon">
+                            <i class="fas fa-redo-alt"></i>
+                        </div>
+                        <div class="tip-content">
+                            <h4>Review Regularly</h4>
+                            <p>Review your budget at least once a month. Adjust categories as needed based on your actual spending patterns.</p>
+                        </div>
+                    </div>
+                    <div class="tip-slide">
+                        <div class="tip-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="tip-content">
+                            <h4>Budget for Savings</h4>
+                            <p>Always include savings as a category in your budget. Treat it as a non-negotiable expense that you pay to your future self.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips-indicators" id="tipsIndicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                    <span class="indicator" data-index="3"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Budget Calculator Modal -->
+    <div class="modal" id="budgetCalculatorModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Budget Calculator</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="budgetCalculatorForm">
+                    <div class="form-group">
+                        <label for="totalPocketMoney">Total Pocket Money</label>
+                        <div class="input-with-icon">
+                            <span class="currency-symbol">$</span>
+                            <input type="number" id="totalPocketMoney" min="1" step="1" placeholder="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Budget Method</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="budgetMethod" value="50-30-20" checked>
+                                <span>50/30/20 Rule</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="budgetMethod" value="custom">
+                                <span>Custom Allocation</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="defaultAllocation">
+                        <div class="allocation-info">
+                            <p>The 50/30/20 rule divides your money into:</p>
+                            <ul>
+                                <li><strong>50%</strong> for needs (food, transportation)</li>
+                                <li><strong>30%</strong> for wants (entertainment, treats)</li>
+                                <li><strong>20%</strong> for savings</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div id="customAllocation" style="display: none;">
+                        <p>Set your own percentage for each category (total must equal 100%):</p>
+                        <div class="custom-allocations">
+                            <div class="category-allocation">
+                                <label for="foodPercentage">Food & Drinks</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="foodPercentage" min="0" max="100" value="25">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="category-allocation">
+                                <label for="entertainmentPercentage">Entertainment</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="entertainmentPercentage" min="0" max="100" value="15">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="category-allocation">
+                                <label for="transportationPercentage">Transportation</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="transportationPercentage" min="0" max="100" value="15">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="category-allocation">
+                                <label for="shoppingPercentage">Shopping</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="shoppingPercentage" min="0" max="100" value="10">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="category-allocation">
+                                <label for="educationPercentage">Education</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="educationPercentage" min="0" max="100" value="10">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="category-allocation">
+                                <label for="giftsPercentage">Gifts</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="giftsPercentage" min="0" max="100" value="5">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="category-allocation">
+                                <label for="savingsPercentage">Savings</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="savingsPercentage" min="0" max="100" value="15">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="category-allocation">
+                                <label for="otherPercentage">Other</label>
+                                <div class="percentage-input">
+                                    <input type="number" id="otherPercentage" min="0" max="100" value="5">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total-percentage">
+                            <span>Total:</span>
+                            <span id="totalPercentage">100%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="calculateBudgetBtn" class="btn primary">Calculate Budget</button>
+                    </div>
+                </form>
+                
+                <div id="calculationResults" style="display: none;">
+                    <h4>Your Budget Breakdown</h4>
+                    <div class="results-container" id="budgetResults">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                    <div class="results-actions">
+                        <button id="applyBudgetBtn" class="btn primary">Apply This Budget</button>
+                        <button id="recalculateBtn" class="btn secondary">Recalculate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Set Budget Modal -->
+    <div class="modal" id="setBudgetModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Set Monthly Budget</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="setBudgetForm">
+                    <div class="form-group">
+                        <label for="budgetMonth">Month</label>
+                        <input type="month" id="budgetMonth" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="budgetAmount">Total Budget Amount</label>
+                        <div class="input-with-icon">
+                            <span class="currency-symbol">$</span>
+                            <input type="number" id="budgetAmount" min="1" step="1" placeholder="0" required>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary">Set Budget</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adjust Categories Modal -->
+    <div class="modal" id="adjustCategoriesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adjust Budget Categories</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="adjustCategoriesForm">
+                    <div class="total-budget-info">
+                        <span>Total Budget:</span>
+                        <span id="adjustTotalBudget">$0.00</span>
+                    </div>
+                    <div class="category-adjustments" id="categoryAdjustments">
+                        <!-- Category adjustments will be populated by JavaScript -->
+                    </div>
+                    <div class="remaining-budget">
+                        <span>Remaining to Allocate:</span>
+                        <span id="remainingToAllocate">$0.00</span>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary" id="saveCategoriesBtn">Save Categories</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="./assets/images/piggypal-logo.svg" alt="PiggyPal Logo">
+                <h2>PiggyPal</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="expenses.html">Expenses</a></li>
+                        <li><a href="tips.html">Saving Tips</a></li>
+                        <li><a href="budget.html">Budget</a></li>
+                        <li><a href="goals.html">Goals</a></li>
+                        <li><a href="help.html">Help/FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="expenses.html">Expense Tracking</a></li>
+                        <li><a href="budget.html">Budget Planning</a></li>
+                        <li><a href="goals.html">Savings Goals</a></li>
+                        <li><a href="tips.html">Financial Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 PiggyPal. All rights reserved.</p>
+            <p>A static frontend project for pocket money management.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/budget.js"></script>
+</body>
+</html>

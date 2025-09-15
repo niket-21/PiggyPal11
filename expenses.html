@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Tracking - PiggyPal</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/expenses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/images/piggypal-logo.svg" alt="PiggyPal Logo">
+            <h1>PiggyPal</h1>
+        </div>
+        <nav>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="expenses.html" class="active">Expenses</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="help.html">Help/FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Track Your Expenses</h2>
+            <p>Record and monitor where your pocket money goes</p>
+        </section>
+
+        <section class="expense-form-section">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Add New Expense</h3>
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="card-body">
+                    <form id="expenseForm" class="expense-form">
+                        <div class="form-group">
+                            <label for="expenseTitle">Expense Title</label>
+                            <input type="text" id="expenseTitle" name="expenseTitle" placeholder="e.g., School Lunch" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expenseAmount">Amount</label>
+                                <div class="input-with-icon">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="expenseAmount" name="expenseAmount" min="0.01" step="0.01" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expenseDate">Date</label>
+                                <input type="date" id="expenseDate" name="expenseDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expenseCategory">Category</label>
+                            <select id="expenseCategory" name="expenseCategory" required>
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="food">Food & Drinks</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="transportation">Transportation</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="education">Education</option>
+                                <option value="gifts">Gifts</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expenseNotes">Notes (Optional)</label>
+                            <textarea id="expenseNotes" name="expenseNotes" placeholder="Add any additional details here"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="reset" class="btn secondary">Clear</button>
+                            <button type="submit" class="btn primary">Add Expense</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="expense-summary">
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="summary-details">
+                        <h4>Today</h4>
+                        <p id="todayExpenses">$0.00</p>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <div class="summary-details">
+                        <h4>This Week</h4>
+                        <p id="weekExpenses">$0.00</p>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="summary-details">
+                        <h4>This Month</h4>
+                        <p id="monthExpenses">$0.00</p>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="summary-details">
+                        <h4>Top Category</h4>
+                        <p id="topCategory">None</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expense-visualization">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Expense Breakdown</h3>
+                    <div class="time-filter">
+                        <button class="filter-btn active" data-period="week">Week</button>
+                        <button class="filter-btn" data-period="month">Month</button>
+                        <button class="filter-btn" data-period="year">Year</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="expenseBreakdownChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expense-history">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Expense History</h3>
+                    <div class="search-filter">
+                        <input type="text" id="expenseSearch" placeholder="Search expenses...">
+                        <button id="filterBtn" class="filter-btn">
+                            <i class="fas fa-filter"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="filter-options" id="filterOptions">
+                        <div class="filter-group">
+                            <label>Date Range:</label>
+                            <div class="date-inputs">
+                                <input type="date" id="startDate">
+                                <span>to</span>
+                                <input type="date" id="endDate">
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Categories:</label>
+                            <div class="category-checkboxes">
+                                <label><input type="checkbox" value="food" checked> Food & Drinks</label>
+                                <label><input type="checkbox" value="entertainment" checked> Entertainment</label>
+                                <label><input type="checkbox" value="transportation" checked> Transportation</label>
+                                <label><input type="checkbox" value="shopping" checked> Shopping</label>
+                                <label><input type="checkbox" value="education" checked> Education</label>
+                                <label><input type="checkbox" value="gifts" checked> Gifts</label>
+                                <label><input type="checkbox" value="other" checked> Other</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Amount Range:</label>
+                            <div class="amount-inputs">
+                                <div class="input-with-icon">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="minAmount" min="0" step="0.01" placeholder="Min">
+                                </div>
+                                <span>to</span>
+                                <div class="input-with-icon">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="maxAmount" min="0" step="0.01" placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-actions">
+                            <button id="resetFilters" class="btn secondary">Reset</button>
+                            <button id="applyFilters" class="btn primary">Apply Filters</button>
+                        </div>
+                    </div>
+                    
+                    <div class="expense-table-container">
+                        <table class="expense-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expenseTableBody">
+                                <!-- Expense entries will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="no-data-message" id="noExpensesMessage">
+                            <i class="fas fa-receipt"></i>
+                            <p>No expenses recorded yet.</p>
+                            <p>Add your first expense using the form above!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination" id="expensePagination">
+                        <!-- Pagination will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expense Edit Modal -->
+        <div class="modal" id="editExpenseModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Edit Expense</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="editExpenseForm" class="expense-form">
+                        <input type="hidden" id="editExpenseId">
+                        <div class="form-group">
+                            <label for="editExpenseTitle">Expense Title</label>
+                            <input type="text" id="editExpenseTitle" name="editExpenseTitle" placeholder="e.g., School Lunch" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="editExpenseAmount">Amount</label>
+                                <div class="input-with-icon">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="editExpenseAmount" name="editExpenseAmount" min="0.01" step="0.01" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editExpenseDate">Date</label>
+                                <input type="date" id="editExpenseDate" name="editExpenseDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editExpenseCategory">Category</label>
+                            <select id="editExpenseCategory" name="editExpenseCategory" required>
+                                <option value="food">Food & Drinks</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="transportation">Transportation</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="education">Education</option>
+                                <option value="gifts">Gifts</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editExpenseNotes">Notes (Optional)</label>
+                            <textarea id="editExpenseNotes" name="editExpenseNotes" placeholder="Add any additional details here"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" id="deleteExpenseBtn" class="btn danger">Delete</button>
+                            <button type="submit" class="btn primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="./assets/images/piggypal-logo.svg" alt="PiggyPal Logo">
+                <h2>PiggyPal</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="expenses.html">Expenses</a></li>
+                        <li><a href="tips.html">Saving Tips</a></li>
+                        <li><a href="budget.html">Budget</a></li>
+                        <li><a href="goals.html">Goals</a></li>
+                        <li><a href="help.html">Help/FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="expenses.html">Expense Tracking</a></li>
+                        <li><a href="budget.html">Budget Planning</a></li>
+                        <li><a href="goals.html">Savings Goals</a></li>
+                        <li><a href="tips.html">Financial Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 PiggyPal. All rights reserved.</p>
+            <p>A static frontend project for pocket money management.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/expenses.js"></script>
+</body>
+</html>
