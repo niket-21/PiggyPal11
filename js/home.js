@@ -103,7 +103,13 @@ function initCharts() {
 }
 
 function initExpenseTrendChart() {
-    const ctx = document.getElementById('expense-trend-chart').getContext('2d');
+    const chartElement = document.getElementById('expensesChart');
+    if (!chartElement) {
+        console.warn('Expense trend chart element not found');
+        return;
+    }
+    
+    const ctx = chartElement.getContext('2d');
     
     // Get user data
     const userData = getUserData();
