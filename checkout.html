@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - PiggyPal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>PiggyPal</h1>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="user-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="wishlist-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </div>
+                    <div class="cart-icon">
+                        <a href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">3</span>
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li class="active">Checkout</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Checkout</h2>
+                <p>Complete your order by providing your shipping and payment details</p>
+            </div>
+
+            <div class="checkout-container">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <form id="checkout-form">
+                        <!-- Customer Information -->
+                        <div class="form-section">
+                            <h3>Customer Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name*</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name*</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <h3>Shipping Address</h3>
+                            <div class="form-group">
+                                <label for="address">Street Address*</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address2">Apartment, suite, etc. (optional)</label>
+                                <input type="text" id="address2" name="address2">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City*</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State/Province*</label>
+                                    <select id="state" name="state" required>
+                                        <option value="">Select State</option>
+                                        <option value="AP">Andhra Pradesh</option>
+                                        <option value="AR">Arunachal Pradesh</option>
+                                        <option value="AS">Assam</option>
+                                        <option value="BR">Bihar</option>
+                                        <option value="CT">Chhattisgarh</option>
+                                        <option value="GA">Goa</option>
+                                        <option value="GJ">Gujarat</option>
+                                        <option value="HR">Haryana</option>
+                                        <option value="HP">Himachal Pradesh</option>
+                                        <option value="JH">Jharkhand</option>
+                                        <option value="KA">Karnataka</option>
+                                        <option value="KL">Kerala</option>
+                                        <option value="MP">Madhya Pradesh</option>
+                                        <option value="MH">Maharashtra</option>
+                                        <option value="MN">Manipur</option>
+                                        <option value="ML">Meghalaya</option>
+                                        <option value="MZ">Mizoram</option>
+                                        <option value="NL">Nagaland</option>
+                                        <option value="OR">Odisha</option>
+                                        <option value="PB">Punjab</option>
+                                        <option value="RJ">Rajasthan</option>
+                                        <option value="SK">Sikkim</option>
+                                        <option value="TN">Tamil Nadu</option>
+                                        <option value="TG">Telangana</option>
+                                        <option value="TR">Tripura</option>
+                                        <option value="UP">Uttar Pradesh</option>
+                                        <option value="UK">Uttarakhand</option>
+                                        <option value="WB">West Bengal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zip">Postal Code*</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country*</label>
+                                    <select id="country" name="country" required>
+                                        <option value="IN" selected>India</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="billing-same" name="billing-same" checked>
+                                <label for="billing-same">Billing address same as shipping</label>
+                            </div>
+                        </div>
+
+                        <!-- Billing Address (Initially Hidden) -->
+                        <div class="form-section billing-address" style="display: none;">
+                            <h3>Billing Address</h3>
+                            <div class="form-group">
+                                <label for="billing-address">Street Address*</label>
+                                <input type="text" id="billing-address" name="billing-address">
+                            </div>
+                            <div class="form-group">
+                                <label for="billing-address2">Apartment, suite, etc. (optional)</label>
+                                <input type="text" id="billing-address2" name="billing-address2">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="billing-city">City*</label>
+                                    <input type="text" id="billing-city" name="billing-city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billing-state">State/Province*</label>
+                                    <select id="billing-state" name="billing-state">
+                                        <option value="">Select State</option>
+                                        <option value="AP">Andhra Pradesh</option>
+                                        <option value="AR">Arunachal Pradesh</option>
+                                        <option value="AS">Assam</option>
+                                        <option value="BR">Bihar</option>
+                                        <option value="CT">Chhattisgarh</option>
+                                        <option value="GA">Goa</option>
+                                        <option value="GJ">Gujarat</option>
+                                        <option value="HR">Haryana</option>
+                                        <option value="HP">Himachal Pradesh</option>
+                                        <option value="JH">Jharkhand</option>
+                                        <option value="KA">Karnataka</option>
+                                        <option value="KL">Kerala</option>
+                                        <option value="MP">Madhya Pradesh</option>
+                                        <option value="MH">Maharashtra</option>
+                                        <option value="MN">Manipur</option>
+                                        <option value="ML">Meghalaya</option>
+                                        <option value="MZ">Mizoram</option>
+                                        <option value="NL">Nagaland</option>
+                                        <option value="OR">Odisha</option>
+                                        <option value="PB">Punjab</option>
+                                        <option value="RJ">Rajasthan</option>
+                                        <option value="SK">Sikkim</option>
+                                        <option value="TN">Tamil Nadu</option>
+                                        <option value="TG">Telangana</option>
+                                        <option value="TR">Tripura</option>
+                                        <option value="UP">Uttar Pradesh</option>
+                                        <option value="UK">Uttarakhand</option>
+                                        <option value="WB">West Bengal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="billing-zip">Postal Code*</label>
+                                    <input type="text" id="billing-zip" name="billing-zip">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billing-country">Country*</label>
+                                    <select id="billing-country" name="billing-country">
+                                        <option value="IN" selected>India</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Method -->
+                        <div class="form-section">
+                            <h3>Shipping Method</h3>
+                            <div class="shipping-methods">
+                                <div class="shipping-method">
+                                    <input type="radio" id="standard-shipping" name="shipping-method" value="standard" checked>
+                                    <label for="standard-shipping">
+                                        <div class="method-name">Standard Shipping</div>
+                                        <div class="method-info">
+                                            <span class="delivery-time">3-5 business days</span>
+                                            <span class="shipping-cost">₹99.00</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="shipping-method">
+                                    <input type="radio" id="express-shipping" name="shipping-method" value="express">
+                                    <label for="express-shipping">
+                                        <div class="method-name">Express Shipping</div>
+                                        <div class="method-info">
+                                            <span class="delivery-time">1-2 business days</span>
+                                            <span class="shipping-cost">₹199.00</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="shipping-method">
+                                    <input type="radio" id="free-shipping" name="shipping-method" value="free">
+                                    <label for="free-shipping">
+                                        <div class="method-name">Free Shipping</div>
+                                        <div class="method-info">
+                                            <span class="delivery-time">5-7 business days</span>
+                                            <span class="shipping-cost">₹0.00</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h3>Payment Method</h3>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                    <label for="credit-card">
+                                        <div class="method-name">Credit / Debit Card</div>
+                                        <div class="payment-icons">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <i class="fab fa-cc-mastercard"></i>
+                                            <i class="fab fa-cc-amex"></i>
+                                            <i class="fab fa-cc-discover"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="credit-card-details">
+                                    <div class="form-group">
+                                        <label for="card-number">Card Number*</label>
+                                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry-date">Expiry Date*</label>
+                                            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV*</label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name-on-card">Name on Card*</label>
+                                        <input type="text" id="name-on-card" name="name-on-card" required>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="upi" name="payment-method" value="upi">
+                                    <label for="upi">
+                                        <div class="method-name">UPI</div>
+                                        <div class="payment-icons">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="upi-details" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="upi-id">UPI ID*</label>
+                                        <input type="text" id="upi-id" name="upi-id" placeholder="username@upi">
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="cod" name="payment-method" value="cod">
+                                    <label for="cod">
+                                        <div class="method-name">Cash on Delivery</div>
+                                        <div class="payment-icons">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <h3>Order Notes (Optional)</h3>
+                            <div class="form-group">
+                                <textarea id="order-notes" name="order-notes" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-section">
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>*</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="order-items">
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/60" alt="Product 1">
+                            </div>
+                            <div class="item-details">
+                                <h4>Wireless Bluetooth Earbuds</h4>
+                                <p>Color: Black | Qty: 1</p>
+                            </div>
+                            <div class="item-price">₹1,999.00</div>
+                        </div>
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/60" alt="Product 2">
+                            </div>
+                            <div class="item-details">
+                                <h4>Smart Fitness Tracker</h4>
+                                <p>Color: Blue | Qty: 1</p>
+                            </div>
+                            <div class="item-price">₹2,499.00</div>
+                        </div>
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/60" alt="Product 3">
+                            </div>
+                            <div class="item-details">
+                                <h4>Portable Power Bank</h4>
+                                <p>Capacity: 10000mAh | Qty: 1</p>
+                            </div>
+                            <div class="item-price">₹1,299.00</div>
+                        </div>
+                    </div>
+                    <div class="order-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>₹5,797.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>₹99.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (18% GST)</span>
+                            <span>₹1,043.46</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>₹6,939.46</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary place-order-btn" form="checkout-form">Place Order</button>
+                    <div class="secure-checkout">
+                        <i class="fas fa-lock"></i> Secure Checkout
+                    </div>
+                    <div class="payment-icons-footer">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-discover"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>PiggyPal</h3>
+                    <p>Your one-stop shop for all your shopping needs. We provide quality products at affordable prices.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Featured</a></li>
+                        <li><a href="#">Discounts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                        <li><i class="fas fa-envelope"></i> info@piggypal.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PiggyPal. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

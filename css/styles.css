@@ -1,14 +1,14 @@
 /* Base Styles */
 :root {
-    --primary-color: #4a6bff;
-    --secondary-color: #ff6b6b;
-    --accent-color: #ffd166;
-    --dark-color: #2d3748;
-    --light-color: #f8f9fa;
-    --gray-color: #6c757d;
-    --success-color: #06d6a0;
-    --warning-color: #ffd166;
-    --danger-color: #ef476f;
+    --primary-color: #1a56db; /* Dark blue */
+    --secondary-color: #3b82f6; /* Medium blue */
+    --accent-color: #93c5fd; /* Light blue */
+    --dark-color: #1e3a8a; /* Navy blue */
+    --light-color: #e0f2fe; /* Very light blue */
+    --gray-color: #94a3b8; /* Blue-gray */
+    --success-color: #0ea5e9; /* Sky blue */
+    --warning-color: #60a5fa; /* Bright blue */
+    --danger-color: #2563eb; /* Royal blue */
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -24,7 +24,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
-    background-color: #f5f7fa;
+    background-color: var(--light-color); /* Light blue background */
 }
 
 a {
@@ -68,9 +68,9 @@ img {
 }
 
 .primary-btn:hover {
-    background-color: #3a5bef;
+    background-color: #1e40af; /* Darker blue on hover */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(74, 107, 255, 0.2);
+    box-shadow: 0 6px 12px rgba(26, 86, 219, 0.2);
 }
 
 .secondary-btn {
@@ -79,9 +79,9 @@ img {
 }
 
 .secondary-btn:hover {
-    background-color: #ff5252;
+    background-color: #2563eb; /* Darker blue on hover */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.2);
 }
 
 .outline-btn {
@@ -185,7 +185,7 @@ nav {
 /* Hero Section */
 .hero {
     padding: 60px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); /* Blue gradient background */
 }
 
 .hero .container {
