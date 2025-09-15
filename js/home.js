@@ -453,9 +453,7 @@ function getCategoryIcon(category) {
     }
 }
 
-// Get user data from local storage
 function getUserData() {
-    // Get data from each storage section
     const expenses = getFromLocalStorage('expenses') || [];
     const budget = getFromLocalStorage('budget') || {
         total: 0,
@@ -464,15 +462,17 @@ function getUserData() {
     const goals = getFromLocalStorage('goals') || [];
     const settings = getFromLocalStorage('settings') || {};
     
-    // Calculate balance (for demo purposes)
-    const balance = 1000 - expenses.reduce((total, expense) => total + expense.amount, 0);
+    // Calculate demo balance
+    const totalIncome = 5000; // Demo income
+    const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+    const balance = totalIncome - totalExpenses;
     
-    // Return combined user data
     return {
-        expenses: expenses,
-        budget: budget,
-        goals: goals,
-        settings: settings,
-        balance: balance
+        expenses,
+        budget,
+        goals,
+        settings,
+        balance,
+        income: totalIncome
     };
 }
