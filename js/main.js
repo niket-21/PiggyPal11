@@ -323,7 +323,7 @@ function showQuickView(productId) {
     // Add product details to modal
     modalContent.innerHTML = `
         <div class="quick-view-header" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee;">
-            <h3 style="margin: 0; font-size: 18px;">${product.name}</h3>
+            <h3 style="margin: 0; font-size: 18px;">{product.name}</h3>
             <button class="close-modal" style="background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
         </div>
         <div class="quick-view-body" style="display: flex; flex-direction: column; padding: 20px; gap: 20px;">
