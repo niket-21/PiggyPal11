@@ -333,7 +333,7 @@ function showQuickView(productId) {
             <div class="product-details">
                 <p class="product-description" style="margin-bottom: 15px; color: #666;">${product.description}</p>
                 <div class="product-price" style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">
-                    $${product.price.toFixed(2)}
+                    ₹${product.price.toFixed(2)}
                 </div>
                 <div class="product-actions" style="display: flex; gap: 10px;">
                     <button class="add-to-wishlist-modal btn primary-btn" data-id="${product.id}" style="background-color: #1a56db; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer;">
