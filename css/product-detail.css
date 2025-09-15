@@ -2,7 +2,7 @@
 
 /* Breadcrumb Styles */
 .breadcrumb {
-    background-color: #f8f9fa;
+    background-color: #e6f0ff;
     padding: 15px 0;
     margin-bottom: 30px;
 }
@@ -33,11 +33,11 @@
 }
 
 .breadcrumb a:hover {
-    color: var(--primary-color);
+    color: #1a56db;
 }
 
 .breadcrumb .active {
-    color: var(--primary-color);
+    color: #1a56db;
     font-weight: 500;
 }
 
@@ -102,7 +102,7 @@
 
 .zoom-icon i {
     font-size: 20px;
-    color: var(--primary-color);
+    color: #1a56db;
 }
 
 .main-image:hover .zoom-icon {
@@ -130,7 +130,7 @@
 }
 
 .thumbnail.active {
-    border-color: var(--primary-color);
+    border-color: #1a56db;
 }
 
 /* Product Info */
@@ -189,7 +189,7 @@
 .current-price {
     font-size: 28px;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #1a56db;
     margin-right: 10px;
 }
 
@@ -200,7 +200,7 @@
 }
 
 .discount-badge {
-    background-color: #ff6b6b;
+    background-color: #1a56db;
     color: white;
     padding: 3px 8px;
     border-radius: 4px;
@@ -238,7 +238,7 @@
 }
 
 .product-features li i {
-    color: var(--primary-color);
+    color: #1a56db;
     margin-right: 10px;
 }
 
@@ -278,7 +278,7 @@
     left: -4px;
     right: -4px;
     bottom: -4px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid #1a56db;
     border-radius: 50%;
 }
 
