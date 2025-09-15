@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopEase</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>ShopEase</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Products</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Sidebar Filters -->
+                <div class="sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <ul class="category-filter">
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    All Categories
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Electronics
+                                    <span class="count">(24)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Audio
+                                    <span class="count">(12)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Smartphones
+                                    <span class="count">(8)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Laptops
+                                    <span class="count">(6)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Accessories
+                                    <span class="count">(15)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <div class="range-slider">
+                                <input type="range" min="0" max="10000" value="0" class="range-min">
+                                <input type="range" min="0" max="10000" value="10000" class="range-max">
+                                <div class="slider-track"></div>
+                                <div class="slider-range"></div>
+                            </div>
+                            <div class="price-inputs">
+                                <div class="field">
+                                    <span>₹</span>
+                                    <input type="number" class="input-min" value="0">
+                                </div>
+                                <div class="separator">-</div>
+                                <div class="field">
+                                    <span>₹</span>
+                                    <input type="number" class="input-max" value="10000">
+                                </div>
+                            </div>
+                            <button class="btn outline-btn apply-price">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Brand</h3>
+                        <ul class="brand-filter">
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Apple
+                                    <span class="count">(8)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Samsung
+                                    <span class="count">(10)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Sony
+                                    <span class="count">(6)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    JBL
+                                    <span class="count">(5)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Boat
+                                    <span class="count">(7)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Rating</h3>
+                        <ul class="rating-filter">
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="rating">
+                                    <span class="radio-mark"></span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="count">(12)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="rating">
+                                    <span class="radio-mark"></span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="count">(8)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="rating">
+                                    <span class="radio-mark"></span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="count">(6)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="rating">
+                                    <span class="radio-mark"></span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="count">(4)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="rating">
+                                    <span class="radio-mark"></span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="count">(2)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Availability</h3>
+                        <ul class="availability-filter">
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="availability" checked>
+                                    <span class="radio-mark"></span>
+                                    All Products
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="availability">
+                                    <span class="radio-mark"></span>
+                                    In Stock
+                                    <span class="count">(28)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio-container">
+                                    <input type="radio" name="availability">
+                                    <span class="radio-mark"></span>
+                                    Out of Stock
+                                    <span class="count">(4)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="btn primary-btn filter-reset">Reset Filters</button>
+                </div>
+
+                <!-- Products Content -->
+                <div class="products-content">
+                    <div class="products-header">
+                        <div class="products-count">
+                            <p>Showing <span>1-12</span> of <span>32</span> products</p>
+                        </div>
+                        <div class="products-sort">
+                            <label for="sort-by">Sort by:</label>
+                            <select id="sort-by" class="sort-select">
+                                <option value="popularity">Popularity</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest First</option>
+                                <option value="rating">Customer Rating</option>
+                            </select>
+                        </div>
+                        <div class="view-options">
+                            <button class="view-btn grid active"><i class="fas fa-th"></i></button>
+                            <button class="view-btn list"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="products-grid-view">
+                        <!-- Product Card 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product1.jpg" alt="Product 1">
+                                <div class="product-tag">New</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="1"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=1">Premium Wireless Earbuds</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹1,999</span>
+                                    <span class="original-price">₹3,499</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Experience crystal-clear sound with our Premium Wireless Earbuds. Featuring advanced noise cancellation technology and long battery life.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="1">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product2.jpg" alt="Product 2">
+                                <div class="product-tag sale">Sale</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="2"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=2">Smart Fitness Watch</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(5.0)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹2,499</span>
+                                    <span class="original-price">₹4,999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Track your fitness goals with our Smart Fitness Watch. Monitor your heart rate, steps, sleep quality, and more with this advanced wearable device.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="2">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product3.jpg" alt="Product 3">
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="3"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=3">Portable Bluetooth Speaker</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(4.0)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹1,299</span>
+                                    <span class="original-price">₹1,999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Take your music anywhere with our Portable Bluetooth Speaker. With powerful bass and crystal-clear sound, this speaker delivers an exceptional audio experience.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="3">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product4.jpg" alt="Product 4">
+                                <div class="product-tag bestseller">Bestseller</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="4"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=4">HD Action Camera</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.7)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹4,999</span>
+                                    <span class="original-price">₹7,999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Capture your adventures with our HD Action Camera. With 4K resolution and waterproof design, this camera is perfect for all your outdoor activities.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="4">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 5 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product5.jpg" alt="Product 5">
+                                <div class="product-tag">New</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="5"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=5">Wireless Charging Pad</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(4.0)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹999</span>
+                                    <span class="original-price">₹1,499</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Charge your devices wirelessly with our sleek Wireless Charging Pad. Compatible with all Qi-enabled devices, this charging pad offers fast and convenient charging.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="5">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 6 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product6.jpg" alt="Product 6">
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="6"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=6">Smart Home Speaker</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(5.0)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹3,499</span>
+                                    <span class="original-price">₹4,999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Transform your home with our Smart Home Speaker. With voice control and premium sound quality, this speaker integrates seamlessly with your smart home ecosystem.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="6">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 7 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product7.jpg" alt="Product 7">
+                                <div class="product-tag sale">Sale</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="7"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=7">Wireless Mouse</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(3.5)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹799</span>
+                                    <span class="original-price">₹1,299</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Enhance your productivity with our Wireless Mouse. With ergonomic design and precise tracking, this mouse offers comfortable and efficient use for extended periods.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="7">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 8 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product8.jpg" alt="Product 8">
+                                <div class="product-tag bestseller">Bestseller</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="8"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=8">Smartphone Power Bank</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(4.0)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹1,499</span>
+                                    <span class="original-price">₹1,999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Never run out of battery with our Smartphone Power Bank. With 20,000mAh capacity and fast charging capability, this power bank keeps your devices powered throughout the day.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="8">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 9 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product9.jpg" alt="Product 9">
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="9"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=9">Wireless Keyboard</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹1,299</span>
+                                    <span class="original-price">₹1,799</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Type comfortably with our Wireless Keyboard. With quiet keys and long battery life, this keyboard offers a seamless typing experience for work or play.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="9">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 10 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product10.jpg" alt="Product 10">
+                                <div class="product-tag">New</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="10"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=10">Noise Cancelling Headphones</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(5.0)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹4,999</span>
+                                    <span class="original-price">₹6,999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Immerse yourself in music with our Noise Cancelling Headphones. With premium sound quality and comfortable design, these headphones provide an exceptional listening experience.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="10">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 11 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product11.jpg" alt="Product 11">
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="11"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=11">Smartphone Gimbal</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(4.0)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹2,999</span>
+                                    <span class="original-price">₹3,999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Create professional-looking videos with our Smartphone Gimbal. With 3-axis stabilization and intelligent tracking, this gimbal helps you capture smooth and steady footage.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="11">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 12 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/product12.jpg" alt="Product 12">
+                                <div class="product-tag sale">Sale</div>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="action-btn add-to-cart" data-id="12"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product-detail.html?id=12">Smart LED Bulb</a></h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(3.5)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹599</span>
+                                    <span class="original-price">₹999</span>
+                                </div>
+                                <div class="product-description">
+                                    <p>Transform your home lighting with our Smart LED Bulb. With millions of colors and voice control capability, this bulb offers endless possibilities for customizing your home ambiance.</p>
+                                </div>
+                                <button class="btn primary-btn list-add-to-cart" data-id="12">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#" class="next"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest updates on new products and special offers</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>ShopEase</h2>
+                    </div>
+                    <p>Your one-stop destination for all your shopping needs. Quality products, competitive prices, and excellent customer service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Mumbai, 400001, India</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> support@shopease.com</li>
+                        <li><i class="fas fa-clock"></i> Monday-Saturday: 9am-8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="images/payment-methods.png" alt="Payment Methods">
+                </div>
+                <p>&copy; 2023 ShopEase. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
