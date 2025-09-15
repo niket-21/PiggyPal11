@@ -333,12 +333,22 @@
     margin: 0;
 }
 
-.add-to-cart-btn {
+.add-to-wishlist-btn {
     padding: 0 30px;
     height: 45px;
+    background-color: #1a56db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.wishlist-btn {
+.add-to-wishlist-btn:hover {
+    background-color: #1e429f;
+}
+
+.quick-view-btn {
     width: 45px;
     height: 45px;
     padding: 0;
@@ -346,14 +356,18 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
+    border: 1px solid #1a56db;
+    background-color: transparent;
+    color: #1a56db;
+    border-radius: 5px;
 }
 
-.wishlist-btn:hover i {
-    color: #ff6b6b;
+.quick-view-btn:hover i {
+    color: #1e429f;
 }
 
-.wishlist-btn.active i {
-    color: #ff6b6b;
+.quick-view-btn.active i {
+    color: #1a56db;
 }
 
 /* Product Meta Info */
@@ -382,7 +396,7 @@
 }
 
 .meta-item a:hover {
-    color: var(--primary-color);
+    color: #1a56db;
 }
 
 .social-share {
