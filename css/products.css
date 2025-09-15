@@ -392,6 +392,11 @@
     transition: transform 0.5s ease;
 }
 
+.product-image .high-res-image {
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
+
 .product-card:hover .product-image img {
     transform: scale(1.05);
 }

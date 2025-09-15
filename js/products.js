@@ -18,7 +18,10 @@ function initProductsPage() {
     initFilters();
     
     // Initialize product actions
-    initProductActions();
+initProductActions();
+
+// Optimize images
+optimizeImages();
 }
 
 // View Switcher (Grid/List)
@@ -289,6 +292,33 @@ function showNotification(message) {
     setTimeout(() => {
         notification.classList.remove('show');
     }, 3000);
+}
+
+// Optimize image loading
+function optimizeImages() {
+    // Get all product images
+    const productImages = document.querySelectorAll('.product-image img');
+    
+    // Add loading="lazy" attribute to images for better performance
+    productImages.forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+        
+        // Add error handling for images
+        img.addEventListener('error', function() {
+            // Replace broken images with a placeholder
+            this.src = 'https://via.placeholder.com/300x300?text=Image+Not+Available';
+            this.alt = 'Image Not Available';
+        });
+        
+        // Check for high-resolution images
+        if (img.classList.contains('high-res-image')) {
+            // Apply special handling for high-res images
+            img.style.objectFit = 'contain';
+            img.parentElement.style.backgroundColor = '#f8f9fa';
+        }
+    });
 }
 
 // Load Products (for a real application, this would fetch from an API)

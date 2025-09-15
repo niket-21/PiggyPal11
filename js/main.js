@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initVideoInteraction();
     initProductActions();
-    initCartFunctionality();
+    initWishlistFunctionality();
     initTestimonialSlider();
 });
 
@@ -85,16 +85,16 @@ function initVideoInteraction() {
     }
 }
 
-// Product Actions (Add to Cart, Wishlist, Quick View)
+// Product Actions (Add to Wishlist, Quick View)
 function initProductActions() {
-    // Add to cart buttons
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    // Add to wishlist buttons
+    const addToWishlistButtons = document.querySelectorAll('.add-to-wishlist');
     
-    addToCartButtons.forEach(button => {
+    addToWishlistButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             const productId = this.getAttribute('data-id');
-            addToCart(productId);
+            addToWishlist(productId);
             
             // Visual feedback
             const originalIcon = this.innerHTML;
@@ -105,6 +105,17 @@ function initProductActions() {
                 this.innerHTML = originalIcon;
                 this.classList.remove('added');
             }, 1500);
+        });
+    });
+    
+    // Quick view buttons
+    const quickViewButtons = document.querySelectorAll('.quick-view');
+    
+    quickViewButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const productId = this.getAttribute('data-id');
+            showQuickView(productId);
         });
     });
     
@@ -128,11 +139,11 @@ function initProductActions() {
     });
 }
 
-// Cart Functionality
-function initCartFunctionality() {
-    // Load cart from localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    updateCartCount(cart.length);
+// Wishlist Functionality
+function initWishlistFunctionality() {
+    // Load wishlist from localStorage
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    updateWishlistCount();
     
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
@@ -159,16 +170,18 @@ function initCartFunctionality() {
     }
 }
 
-// Add product to cart
-function addToCart(productId) {
-    // Get current cart or initialize empty array
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Add product to wishlist
+function addToWishlist(productId) {
+    // Get current wishlist or initialize empty array
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     
-    // Check if product already in cart
-    const existingProduct = cart.find(item => item.id === productId);
+    // Check if product already in wishlist
+    const existingProduct = wishlist.find(item => item.id === productId);
     
     if (existingProduct) {
-        existingProduct.quantity += 1;
+        // Product already in wishlist - show notification
+        showNotification('Product already in your wishlist');
+        return;
     } else {
         // In a real app, you would fetch product details from an API
         // For this demo, we'll use hardcoded product data
@@ -176,53 +189,206 @@ function addToCart(productId) {
             '1': {
                 id: '1',
                 name: 'Premium Wireless Earbuds',
-                price: 1999,
+                price: 24.99,
                 image: 'images/product1.jpg'
             },
             '2': {
                 id: '2',
                 name: 'Smart Fitness Watch',
-                price: 2499,
+                price: 29.99,
                 image: 'images/product2.jpg'
             },
             '3': {
                 id: '3',
                 name: 'Portable Bluetooth Speaker',
-                price: 1299,
+                price: 15.99,
                 image: 'images/product3.jpg'
             },
             '4': {
                 id: '4',
                 name: 'HD Action Camera',
-                price: 4999,
+                price: 59.99,
                 image: 'images/product4.jpg'
             }
         };
         
         const product = products[productId];
         if (product) {
-            cart.push({
-                ...product,
-                quantity: 1
+            wishlist.push({
+                ...product
             });
         }
     }
     
-    // Save updated cart
-    localStorage.setItem('cart', JSON.stringify(cart));
+    // Save updated wishlist
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
     
-    // Update cart count in UI
-    updateCartCount(cart.length);
+    // Update wishlist count in UI
+    updateWishlistCount(1);
     
     // Show notification
-    showNotification('Product added to cart!');
+    showNotification('Product added to wishlist!');
 }
 
-// Update cart count in the header
-function updateCartCount(count) {
-    const cartCount = document.querySelector('.cart-count');
-    if (cartCount) {
-        cartCount.textContent = count;
+// Update wishlist count in the header
+function updateWishlistCount(change = 0) {
+    const wishlistCountElement = document.querySelector('.wishlist-count');
+    let currentCount = parseInt(localStorage.getItem('wishlistCount') || '0');
+    
+    if (change !== 0) {
+        currentCount += change;
+        localStorage.setItem('wishlistCount', currentCount);
+    }
+    
+    if (wishlistCountElement) {
+        wishlistCountElement.textContent = currentCount;
+        
+        // Show/hide based on count
+        if (currentCount > 0) {
+            wishlistCountElement.style.display = 'flex';
+        } else {
+            wishlistCountElement.style.display = 'none';
+        }
+    }
+}
+
+// Quick view functionality
+function showQuickView(productId) {
+    // In a real app, you would fetch product details from an API
+    // For this demo, we'll use hardcoded product data
+    const products = {
+        '1': {
+            id: '1',
+            name: 'Premium Wireless Earbuds',
+            price: 24.99,
+            image: 'https://m.media-amazon.com/images/I/61f1YfTkTDL._AC_SL1500_.jpg',
+            description: 'Experience crystal-clear sound with these premium wireless earbuds. Features include active noise cancellation, water resistance, and long battery life.'
+        },
+        '2': {
+            id: '2',
+            name: 'Smart Fitness Watch',
+            price: 29.99,
+            image: 'https://m.media-amazon.com/images/I/61SSVxTSs3L._AC_SL1500_.jpg',
+            description: 'Track your fitness goals with this advanced smartwatch. Monitors heart rate, steps, sleep quality and more with a beautiful display.'
+        },
+        '3': {
+            id: '3',
+            name: 'Portable Bluetooth Speaker',
+            price: 15.99,
+            image: 'https://m.media-amazon.com/images/I/71HXzrP2ITL._AC_SL1500_.jpg',
+            description: 'Take your music anywhere with this compact yet powerful Bluetooth speaker. Offers rich sound, waterproof design, and 12-hour battery life.'
+        },
+        '4': {
+            id: '4',
+            name: 'HD Action Camera',
+            price: 59.99,
+            image: 'https://m.media-amazon.com/images/I/71H8N3F7scL._AC_SL1500_.jpg',
+            description: 'Capture your adventures in stunning 4K resolution. This action camera is waterproof, shockproof, and comes with various mounting accessories.'
+        }
+    };
+    
+    const product = products[productId];
+    if (!product) return;
+    
+    // Create modal container
+    const modal = document.createElement('div');
+    modal.className = 'quick-view-modal';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.7)';
+    modal.style.zIndex = '1000';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.opacity = '0';
+    modal.style.transition = 'opacity 0.3s ease';
+    
+    // Create modal content
+    const modalContent = document.createElement('div');
+    modalContent.className = 'quick-view-content';
+    modalContent.style.backgroundColor = '#fff';
+    modalContent.style.borderRadius = '8px';
+    modalContent.style.maxWidth = '800px';
+    modalContent.style.width = '90%';
+    modalContent.style.display = 'flex';
+    modalContent.style.flexDirection = 'column';
+    modalContent.style.maxHeight = '90vh';
+    modalContent.style.overflow = 'auto';
+    modalContent.style.transform = 'translateY(20px)';
+    modalContent.style.transition = 'transform 0.3s ease';
+    
+    // Add product details to modal
+    modalContent.innerHTML = `
+        <div class="quick-view-header" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee;">
+            <h3 style="margin: 0; font-size: 18px;">${product.name}</h3>
+            <button class="close-modal" style="background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
+        </div>
+        <div class="quick-view-body" style="display: flex; flex-direction: column; padding: 20px; gap: 20px;">
+            <div class="product-image" style="text-align: center;">
+                <img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 300px; object-fit: contain;">
+            </div>
+            <div class="product-details">
+                <p class="product-description" style="margin-bottom: 15px; color: #666;">${product.description}</p>
+                <div class="product-price" style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">
+                    $${product.price.toFixed(2)}
+                </div>
+                <div class="product-actions" style="display: flex; gap: 10px;">
+                    <button class="add-to-wishlist-modal btn primary-btn" data-id="${product.id}" style="background-color: #1a56db; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer;">
+                        <i class="fas fa-heart"></i> Add to Wishlist
+                    </button>
+                    <a href="product-detail.html?id=${product.id}" class="btn secondary-btn" style="background-color: #f3f4f6; color: #333; border: none; padding: 10px 15px; border-radius: 4px; text-decoration: none; display: inline-block;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal to DOM
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    
+    // Show modal with animation
+    setTimeout(() => {
+        modal.style.opacity = '1';
+        modalContent.style.transform = 'translateY(0)';
+    }, 10);
+    
+    // Close modal on click outside or close button
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    const closeButton = modalContent.querySelector('.close-modal');
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+    
+    // Add to wishlist from modal
+    const addToWishlistButton = modalContent.querySelector('.add-to-wishlist-modal');
+    if (addToWishlistButton) {
+        addToWishlistButton.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            addToWishlist(productId);
+            
+            // Visual feedback
+            this.innerHTML = '<i class="fas fa-check"></i> Added to Wishlist';
+            this.disabled = true;
+        });
+    }
+    
+    function closeModal() {
+        modal.style.opacity = '0';
+        modalContent.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            document.body.removeChild(modal);
+        }, 300);
     }
 }
 
@@ -237,7 +403,7 @@ function showNotification(message) {
     notification.style.position = 'fixed';
     notification.style.bottom = '20px';
     notification.style.right = '20px';
-    notification.style.backgroundColor = 'var(--success-color)';
+    notification.style.backgroundColor = '#1a56db';
     notification.style.color = 'white';
     notification.style.padding = '10px 20px';
     notification.style.borderRadius = 'var(--border-radius)';

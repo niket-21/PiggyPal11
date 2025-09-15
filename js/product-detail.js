@@ -457,5 +457,53 @@ function updateProductUI(product) {
     document.title = `${product.name} - ShopEase`;
 }
 
+// Initialize video player
+function initVideoPlayer() {
+    const video = document.getElementById('product-video');
+    if (video) {
+        // Set video to autoplay but muted to comply with browser policies
+        video.muted = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.playsinline = true;
+        
+        // Attempt to play the video
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Autoplay started successfully
+                console.log('Video autoplay started successfully');
+            }).catch(error => {
+                // Autoplay was prevented
+                console.log('Video autoplay was prevented:', error);
+                // Show play button or alternative UI
+            });
+        }
+    }
+}
+
+// Optimize image loading
+function optimizeImages() {
+    // Get all product images
+    const productImages = document.querySelectorAll('.product-image img, .main-image img');
+    
+    // Add loading="lazy" attribute to images for better performance
+    productImages.forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+        
+        // Add error handling for images
+        img.addEventListener('error', function() {
+            // Replace broken images with a placeholder
+            this.src = 'https://via.placeholder.com/300x300?text=Image+Not+Available';
+            this.alt = 'Image Not Available';
+        });
+    });
+}
+
 // Initialize on page load
 updateCartCount();
+initVideoPlayer();
+optimizeImages();
