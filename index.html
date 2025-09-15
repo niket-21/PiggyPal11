@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Your Shopping Companion</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>ShopEase</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover Amazing Products</h1>
+                <p>Shop the latest trends with unbeatable prices</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="btn primary-btn">Shop Now</a>
+                    <a href="#featured" class="btn secondary-btn">Explore</a>
+                </div>
+            </div>
+            <div class="hero-video">
+                <div class="video-container">
+                    <img src="images/hero-image.jpg" alt="Hero Image" class="video-placeholder">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Handpicked selections just for you</p>
+            </div>
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product1.jpg" alt="Product 1">
+                        <div class="product-tag">New</div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-cart" data-id="1"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=1">Premium Wireless Earbuds</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,999</span>
+                            <span class="original-price">₹3,499</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product2.jpg" alt="Product 2">
+                        <div class="product-tag sale">Sale</div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-cart" data-id="2"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=2">Smart Fitness Watch</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹2,499</span>
+                            <span class="original-price">₹4,999</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product3.jpg" alt="Product 3">
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-cart" data-id="3"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=3">Portable Bluetooth Speaker</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,299</span>
+                            <span class="original-price">₹1,999</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product4.jpg" alt="Product 4">
+                        <div class="product-tag bestseller">Bestseller</div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-cart" data-id="4"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=4">HD Action Camera</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹4,999</span>
+                            <span class="original-price">₹7,999</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="products.html" class="btn primary-btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Browse our top categories</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="images/category1.jpg" alt="Electronics">
+                    <div class="category-info">
+                        <h3>Electronics</h3>
+                        <a href="products.html?category=electronics" class="btn outline-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/category2.jpg" alt="Fashion">
+                    <div class="category-info">
+                        <h3>Fashion</h3>
+                        <a href="products.html?category=fashion" class="btn outline-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/category3.jpg" alt="Home & Kitchen">
+                    <div class="category-info">
+                        <h3>Home & Kitchen</h3>
+                        <a href="products.html?category=home" class="btn outline-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/category4.jpg" alt="Beauty">
+                    <div class="category-info">
+                        <h3>Beauty</h3>
+                        <a href="products.html?category=beauty" class="btn outline-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="special-offers">
+        <div class="container">
+            <div class="offers-grid">
+                <div class="offer-card large">
+                    <div class="offer-content">
+                        <h3>Summer Sale</h3>
+                        <h2>Up to 50% Off</h2>
+                        <p>On selected electronics and fashion items</p>
+                        <a href="products.html?sale=true" class="btn primary-btn">Shop Now</a>
+                    </div>
+                    <img src="images/offer1.jpg" alt="Summer Sale">
+                </div>
+                <div class="offer-card small">
+                    <div class="offer-content">
+                        <h3>New Arrivals</h3>
+                        <p>Check out the latest products</p>
+                        <a href="products.html?new=true" class="btn secondary-btn">Explore</a>
+                    </div>
+                    <img src="images/offer2.jpg" alt="New Arrivals">
+                </div>
+                <div class="offer-card small">
+                    <div class="offer-content">
+                        <h3>Exclusive Deals</h3>
+                        <p>Limited time offers</p>
+                        <a href="products.html?exclusive=true" class="btn secondary-btn">View Deals</a>
+                    </div>
+                    <img src="images/offer3.jpg" alt="Exclusive Deals">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Trusted by thousands of satisfied shoppers</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"ShopEase has the best selection of electronics I've found online. Fast shipping and excellent customer service!"</p>
+                    <div class="testimonial-author">
+                        <img src="images/customer1.jpg" alt="Customer 1">
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <p>Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I love the quality of products from ShopEase. The prices are competitive and the website is so easy to navigate."</p>
+                    <div class="testimonial-author">
+                        <img src="images/customer2.jpg" alt="Customer 2">
+                        <div>
+                            <h4>Rajesh Patel</h4>
+                            <p>Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"The delivery was super fast and the packaging was excellent. Will definitely shop here again!"</p>
+                    <div class="testimonial-author">
+                        <img src="images/customer3.jpg" alt="Customer 3">
+                        <div>
+                            <h4>Ananya Singh</h4>
+                            <p>Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates on new products and special offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>ShopEase</h2>
+                    </div>
+                    <p>Your one-stop destination for all your shopping needs. Quality products, competitive prices, and excellent customer service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Mumbai, 400001, India</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> support@shopease.com</li>
+                        <li><i class="fas fa-clock"></i> Monday-Saturday: 9am-8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="images/payment-methods.png" alt="Payment Methods">
+                </div>
+                <p>&copy; 2023 ShopEase. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
