@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - TechTrove</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>TechTrove</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="wishlist.html" class="wishlist-icon active"><i class="fas fa-heart"></i><span class="wishlist-count">3</span></a>
+                    <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Wishlist</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Wishlist Section -->
+    <section class="wishlist-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Wishlist</h2>
+                <p>Save your favorite items for later</p>
+            </div>
+
+            <div class="wishlist-container">
+                <!-- Wishlist Items -->
+                <div class="wishlist-items">
+                    <div class="wishlist-header">
+                        <div class="wishlist-header-product">Product</div>
+                        <div class="wishlist-header-price">Price</div>
+                        <div class="wishlist-header-availability">Availability</div>
+                        <div class="wishlist-header-actions">Actions</div>
+                        <div class="wishlist-header-remove"></div>
+                    </div>
+
+                    <!-- Wishlist Item 1 -->
+                    <div class="wishlist-item">
+                        <div class="wishlist-product">
+                            <div class="wishlist-product-image">
+                                <img src="images/product1.jpg" alt="Premium Wireless Earbuds">
+                            </div>
+                            <div class="wishlist-product-info">
+                                <h3>Premium Wireless Earbuds</h3>
+                                <p class="wishlist-product-variant">Color: Black</p>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">$24.99</div>
+                        <div class="wishlist-availability">
+                            <span class="in-stock">In Stock</span>
+                        </div>
+                        <div class="wishlist-actions">
+                            <button class="btn primary-btn">View Product</button>
+                        </div>
+                        <div class="wishlist-remove">
+                            <button class="remove-btn"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Item 2 -->
+                    <div class="wishlist-item">
+                        <div class="wishlist-product">
+                            <div class="wishlist-product-image">
+                                <img src="images/product4.jpg" alt="HD Action Camera">
+                            </div>
+                            <div class="wishlist-product-info">
+                                <h3>HD Action Camera</h3>
+                                <p class="wishlist-product-variant">Model: Pro</p>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">$59.99</div>
+                        <div class="wishlist-availability">
+                            <span class="in-stock">In Stock</span>
+                        </div>
+                        <div class="wishlist-actions">
+                            <button class="btn primary-btn">View Product</button>
+                        </div>
+                        <div class="wishlist-remove">
+                            <button class="remove-btn"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Item 3 -->
+                    <div class="wishlist-item">
+                        <div class="wishlist-product">
+                            <div class="wishlist-product-image">
+                                <img src="images/product5.jpg" alt="Wireless Charging Pad">
+                            </div>
+                            <div class="wishlist-product-info">
+                                <h3>Wireless Charging Pad</h3>
+                                <p class="wishlist-product-variant">Color: White</p>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">$12.99</div>
+                        <div class="wishlist-availability">
+                            <span class="in-stock">In Stock</span>
+                        </div>
+                        <div class="wishlist-actions">
+                            <button class="btn primary-btn">View Product</button>
+                        </div>
+                        <div class="wishlist-remove">
+                            <button class="remove-btn"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Actions -->
+                    <div class="wishlist-actions-container">
+                        <button class="btn outline-btn clear-wishlist">Clear Wishlist</button>
+                        <button class="btn primary-btn continue-shopping">Continue Shopping</button>
+                    </div>
+                </div>
+
+                <!-- Wishlist Summary -->
+                <div class="wishlist-summary">
+                    <h3>Wishlist Summary</h3>
+                    <div class="summary-row">
+                        <span>Total Items</span>
+                        <span>3</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total Value</span>
+                        <span>$97.97</span>
+                    </div>
+                    <div class="wishlist-note">
+                        <p>Items in your wishlist are not reserved and may sell out.</p>
+                    </div>
+                    <button class="btn primary-btn share-wishlist-btn">Share Wishlist</button>
+                    <div class="continue-shopping">
+                        <a href="products.html"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- You May Also Like Section -->
+    <section class="related-products">
+        <div class="container">
+            <div class="section-title">
+                <h2>You May Also Like</h2>
+                <p>Products similar to your wishlist items</p>
+            </div>
+            <div class="product-slider">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product2.jpg" alt="Smart Fitness Watch">
+                        <div class="product-tag sale">Sale</div>
+                        <div class="product-actions">
+                            <button class="action-btn active"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-wishlist" data-id="2"><i class="fas fa-plus"></i></button>
+                            <button class="action-btn quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=2">Smart Fitness Watch</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$29.99</span>
+                            <span class="original-price">$59.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product3.jpg" alt="Portable Bluetooth Speaker">
+                        <div class="product-actions">
+                            <button class="action-btn active"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-wishlist" data-id="3"><i class="fas fa-plus"></i></button>
+                            <button class="action-btn quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=3">Portable Bluetooth Speaker</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$15.99</span>
+                            <span class="original-price">$24.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product6.jpg" alt="Smart Home Speaker">
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-cart" data-id="6"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=6">Smart Home Speaker</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                            <span class="original-price">$59.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product10.jpg" alt="Noise Cancelling Headphones">
+                        <div class="product-tag">New</div>
+                        <div class="product-actions">
+                            <button class="action-btn active"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn add-to-wishlist" data-id="10"><i class="fas fa-plus"></i></button>
+                            <button class="action-btn quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=10">Noise Cancelling Headphones</a></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$59.99</span>
+                            <span class="original-price">$79.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>TechTrove</h2>
+                    </div>
+                    <p>Your premier destination for cutting-edge technology and gadgets. Quality tech products, competitive prices, and expert customer service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 456 Tech Avenue, San Francisco, CA 94105, USA</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@techtrove.com</li>
+                        <li><i class="fas fa-clock"></i> Monday-Saturday: 9am-6pm PST</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="images/payment-methods.png" alt="Payment Methods">
+                </div>
+                <p>&copy; 2023 TechTrove. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/wishlist.js"></script>
+</body>
+</html>
